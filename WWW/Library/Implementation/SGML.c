@@ -4592,7 +4592,8 @@ const HTStreamClass SGMLParser =
 
 HTStream *SGML_new(const SGML_dtd * dtd,
 		   HTParentAnchor *anchor,
-		   HTStructured * target)
+		   HTStructured * target,
+           int extended_html)
 {
     HTStream *me = typecalloc(struct _HTStream);
 
@@ -4662,7 +4663,10 @@ HTStream *SGML_new(const SGML_dtd * dtd,
 	sgml_in_psrc_was_initialized = TRUE;
     }
 #endif
-    me->extended_html = TRUE;
+    if (extended_html)
+    {
+        me->extended_html = TRUE;
+    }
 #if 0
     printf("foo %d\n", me->extended_html);
     exit(1);

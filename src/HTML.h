@@ -251,6 +251,11 @@ extern "C" {
 				 HTParentAnchor *anchor,
 				 HTStream *sink);
 
+    extern HTStream *XHTMLPresent(HTPresentation *pres,
+				 HTParentAnchor *anchor,
+				 HTStream *sink);
+
+
     extern HTStructured *HTML_new(HTParentAnchor *anchor,
 				  HTFormat format_out,
 				  HTStream *target);
