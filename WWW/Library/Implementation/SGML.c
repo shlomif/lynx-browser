@@ -3647,7 +3647,9 @@ static void SGML_character(HTStream *me, int c_in)
 		&& (string->size == 1)
 		&& (string->data[0] == '/')) {
 		if (me->extended_html
-		    && ignore_when_empty(me->current_tag)) {
+		    && 1
+            // ignore_when_empty(me->current_tag)
+            ) {
 		    discard_empty(me);
 		}
 	    } else {
@@ -4659,6 +4661,11 @@ HTStream *SGML_new(const SGML_dtd * dtd,
 	psrc_convert_string = FALSE;
 	sgml_in_psrc_was_initialized = TRUE;
     }
+#endif
+    me->extended_html = TRUE;
+#if 0
+    printf("foo %d\n", me->extended_html);
+    exit(1);
 #endif
 
     sgml_offset = 0;
