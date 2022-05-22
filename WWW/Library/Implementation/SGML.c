@@ -4593,7 +4593,7 @@ const HTStreamClass SGMLParser =
 HTStream *SGML_new(const SGML_dtd * dtd,
 		   HTParentAnchor *anchor,
 		   HTStructured * target,
-           int extended_html)
+		   int extended_html)
 {
     HTStream *me = typecalloc(struct _HTStream);
 
@@ -4667,10 +4667,6 @@ HTStream *SGML_new(const SGML_dtd * dtd,
     {
         me->extended_html = TRUE;
     }
-#if 0
-    printf("foo %d\n", me->extended_html);
-    exit(1);
-#endif
 
     sgml_offset = 0;
     return me;
