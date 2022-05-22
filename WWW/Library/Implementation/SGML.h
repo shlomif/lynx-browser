@@ -282,7 +282,7 @@ Create an SGML parser
     extern HTStream *SGML_new(const SGML_dtd * dtd,
 			      HTParentAnchor *anchor,
 			      HTStructured * target,
-                             int extended_html)
+			      int extended_html)
         ;
 
     extern const HTStreamClass SGMLParser;
